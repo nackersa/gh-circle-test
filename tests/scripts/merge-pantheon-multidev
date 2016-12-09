@@ -35,3 +35,6 @@ rm -rf $(find * -name ".git")
 git add -A .
 git commit -m "Merge assets built for CI-$CIRCLE_BUILD_NUM."
 git push origin master
+
+sleep 20
+terminus drush 'config-import --yes'
